@@ -12,7 +12,9 @@ const Home: NextPage = () => {
           href="https://cdn-icons-png.flaticon.com/128/6228/6228867.png"
         />
       </Head>
-      <h1 className='text-red-500 text-4xl font-bold'>Welcome to NFT-Drop Build</h1>
+      <h1 className="text-4xl font-bold text-red-500">
+        Welcome to NFT-Drop Build
+      </h1>
     </div>
   )
 }

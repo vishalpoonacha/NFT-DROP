@@ -1,6 +1,6 @@
 export default {
-  name: 'author',
-  title: 'Author',
+  name: 'creator',
+  title: 'Creator',
   type: 'document',
   fields: [
     {
@@ -8,6 +8,17 @@ export default {
       title: 'Name',
       type: 'string',
     },
+    {
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    },
+    {
+      name: 'bio',
+      title: 'Bio',
+      type: 'string',
+    },
+
     {
       name: 'slug',
       title: 'Slug',
@@ -25,24 +36,5 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
-    },
   ],
-  preview: {
-    select: {
-      title: 'name',
-      media: 'image',
-    },
-  },
 }
