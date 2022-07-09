@@ -61,7 +61,10 @@ function NFTDropPage({ collection }: Props) {
     const notification = toast.loading('Minting...', {
       style: {
         background: 'white',
-        // HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+        color: 'green',
+        fontWeight: 'bolder',
+        fontSize: '17px',
+        padding: '20px',
       },
     })
     nftDrop
@@ -71,15 +74,36 @@ function NFTDropPage({ collection }: Props) {
         const claimedTokenId = tx[0].id
         const claimedNFT = await tx[0].data()
 
+        toast('HOORAY.. You Successfully Minted!', {
+          duration: 8000,
+          style: {
+            background: 'green',
+            color: 'white',
+            fontWeight: 'bolder',
+            fontSize: '17px',
+            padding: '20px',
+          },
+        })
+
         console.log(receipt)
         console.log(claimedTokenId)
         console.log(claimedNFT)
       })
       .catch((err) => {
         console.log(err)
+        toast('Whoops.. Something went wrong!!', {
+          style: {
+            background: 'red',
+            color: 'white',
+            fontWeight: 'bolder',
+            fontSize: '17px',
+            padding: '20px',
+          },
+        })
       })
       .finally(() => {
         setLoading(false)
+        toast.dismiss(notification)
       })
   }
 
